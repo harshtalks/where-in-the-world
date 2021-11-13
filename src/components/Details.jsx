@@ -88,11 +88,15 @@ const Details = () => {
                   <BorderCountries>
                     <p>Border Countries: </p>
                     <div className="borders">
-                      {data.borders.map((el) => (
-                        <Link to={`/${el}`} key={el} className="border">
-                          {el}
-                        </Link>
-                      ))}
+                      {data.borders ? (
+                        data.borders.map((el) => (
+                          <Link to={`/${el}`} key={el} className="border">
+                            {el}
+                          </Link>
+                        ))
+                      ) : (
+                        <p>None</p>
+                      )}
                     </div>
                   </BorderCountries>
                 </div>
